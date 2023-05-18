@@ -1,0 +1,7 @@
+<div class="container-fluid g-0">
+  <app-header (sidebarToggled)="sidebarStatus = $event"></app-header>
+
+  <main>
+   <app-sidebar[sidebarStatus]="sidebarStatus"></app-sidebar>
+  </main>
+</div>

@@ -1,0 +1,11 @@
+<div class="sidebar-content">
+    <ul class="nav-list" [ngClass]="{'nav-list-open':sidebarStatus}">
+        <li class="nav-list-item" *ngfor="let item of list">
+            <i class="{{item.icon}}"></i>
+            <span>
+                <a href="#">{{item.name}}</a>
+            </span>
+        </li>
+        
+    </ul>
+</div>
