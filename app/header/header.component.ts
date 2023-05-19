@@ -16,9 +16,9 @@ export class HeaderComponent  implements OnInit{
     
   }
 
-  SidebarToggle(){
-    this.menuStatus = !this.menuStaus;
-    this.SidebarToggle.emit(this.manuStatus)
-  }
+  // SidebarToggle(){
+  //   this.menuStatus = !this.menuStaus;
+  //   this.SidebarToggle.emit(this.manuStatus)
+  // }
 
 }
