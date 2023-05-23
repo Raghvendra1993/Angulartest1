@@ -24,6 +24,9 @@ body{
 .texts{
     margin-top: 30px;
 }
+.myskills{
+    z-index: 999;
+}
 .skills{
     width: 120%;
     max-width: 600px;

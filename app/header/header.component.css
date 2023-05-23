@@ -1,8 +1,5 @@
 .navbar{
-    /* margin-top: 5px;
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px; */
+   z-index: 9;
 }
 .side-nav-button{
     display: flex;

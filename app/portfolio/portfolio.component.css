@@ -21,5 +21,16 @@
 
 }
 .col{
+    margin-left: 120px;
     gap: 20px;
+}
+/* .img-fluif{
+    max-width: 100%;
+    height: auto;
+    margin: 10px;
+}
+     */
+
+.col a:hover{
+    background-color: #777;
 }
