@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark px-2">
+<nav class="navbar navbar-expand navbar-dark bg-dark px-2" (scroll)="onscroll()" [ngClass]="navbarfixed?'fexed':'nofixed'">
     <div class="side-nav-button p-2 me-3 text-light">
         <i class="fa-solid fa-bars"></i>
     </div>
@@ -51,5 +51,8 @@
 </nav>
 
 <div>
+    <app-home></app-home>
+    <app-about></app-about>
+    <app-portfolio></app-portfolio>
     <app-footer></app-footer>
 </div>

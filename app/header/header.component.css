@@ -1,8 +1,8 @@
 .navbar{
-    margin-top: 5px;
+    /* margin-top: 5px;
     border-radius: 10px;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 10px; */
 }
 .side-nav-button{
     display: flex;
@@ -15,4 +15,16 @@
 .side-nav-button:hover{
     background-color: rgb(85, 83, 83);
     border-radius: 30%;
+}
+.fixed{
+    position: fixed;
+    width: 90%;
+    transition: 0.2s linear;
+    top:0px;
+
+}
+.nofixed{
+    position: sticky;
+    transition: 0.2s linear;
+    top: -5px;
 }

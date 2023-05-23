@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+
+}
+.container{
+    margin-top: 100px;
+}
+.about{
+    display: flex;
+}
+.img{
+    margin-left: 100px;
+    width: 50%;
+}
+.rightcontent{
+    margin-top: 50px;
+    margin-left: 150px;
+    width: 50%;
+
+}
+.texts{
+    margin-top: 30px;
+}
+.skills{
+    width: 120%;
+    max-width: 600px;
+    padding: 0 20px;
+}
+.skill_name{
+    font-size: 18px;
+    margin: 20px 0;
+
+}
+.skillbar{
+    height: 4px;
+    background:#e9ecef;
+    border-radius: 10px;
+}
+.skill-per{
+    height: 4px;
+    border-radius: 10px;
+    position: relative;
+    background: #96bb7c;
+
+}
+.skill-per::before{
+    content: attr(per);
+    position: absolute;
+    padding: 3px 4px;
+    background: #96bb7c;
+    border-radius: 8px;
+    color: azure;
+    bottom: -35px;
+    right: 0;
+    transform:translateX(50%);
+}
+.skill-per::after{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 6px;
+    background: #96bb7c;
+    right: 0;
+    transform:translateX(50%);
+
+}
+.button{
+    margin-top: 50px;
+    
+}
+.btn1{
+    background-color: #96bb7c;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 30px;
+    margin-right: 10px;
+    border: none;
+}
+.btn2{
+    background-color:#6C757D;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 30px;
+    margin-right: 10px;
+    border: none;
+}
+
+
+

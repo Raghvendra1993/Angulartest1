@@ -9,6 +9,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
 import { UsignupComponent } from './usignup/usignup.component';
 import { UloginComponent } from './ulogin/ulogin.component';
+import { AboutComponent } from './about/about.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { UloginComponent } from './ulogin/ulogin.component';
     SidebarComponent,
     HomeComponent,
     UsignupComponent,
-    UloginComponent
+    UloginComponent,
+    AboutComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

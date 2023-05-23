@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+.header{
+    margin-left: 500px;
+    display: flex;
+    padding: 20px;
+    list-style: none;
+    gap: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+.header li a:hover {
+    color:#96bb7c;
+
+}
+.row{
+   align-items: center;
+
+}
+.col{
+    gap: 20px;
+}
