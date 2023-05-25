@@ -23,5 +23,5 @@
 .nofixed{
     position: sticky;
     transition: 0.2s linear;
-    top: -5px;
+    top: 0px;
 }

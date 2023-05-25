@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+.container{
+    margin-top: 100px;
+}
+.header{
+    margin-left: 150px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.modalbox{
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 100%;
+   display: flex;
+   width: full;
+   height: 100vh;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+}
+.main{
+    
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.card{
+    width: 325px;
+    height: 325px;
+    background-color: #FFFFFF;
+    border: 1px solid #495057;
+    border-radius: 5px;
+}
+.fa-sharp{  
+}

@@ -26,6 +26,8 @@ const appRoute:Routes = [
   {path:'Portfolio',component:PortfolioComponent},
   {path:'Services',component:MyservicesComponent},
   {path:'Contact',component:ContactComponent},
+  {path:'Login',component:UloginComponent},
+  {path:'SingUp',component:UsignupComponent},
   {path:'**', component:ErrorComponent}
 
 ]
