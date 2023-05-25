@@ -20,3 +20,6 @@ app-sidebar{
 .app-sidebar-open{
     
 }
+.active{
+    background-color:gray;
+}

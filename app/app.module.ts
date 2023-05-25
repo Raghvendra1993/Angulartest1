@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule,Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -11,6 +12,23 @@ import { UsignupComponent } from './usignup/usignup.component';
 import { UloginComponent } from './ulogin/ulogin.component';
 import { AboutComponent } from './about/about.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { MyservicesComponent } from './myservices/myservices.component';
+import { ErrorComponent } from './error/error.component';
+import { ContactComponent } from './contact/contact.component';
+
+
+const appRoute:Routes = [
+  
+  {path:'',component:HomeComponent},
+  // {path:'',redirectTo:'Home',pathMatch:'full'},
+  {path:'Home',component:HomeComponent},
+  {path:'About',component:AboutComponent},
+  {path:'Portfolio',component:PortfolioComponent},
+  {path:'Services',component:MyservicesComponent},
+  {path:'Contact',component:ContactComponent},
+  {path:'**', component:ErrorComponent}
+
+]
 
 @NgModule({
   declarations: [
@@ -22,11 +40,16 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     UsignupComponent,
     UloginComponent,
     AboutComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    MyservicesComponent,
+    ErrorComponent,
+    ContactComponent
+    
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]

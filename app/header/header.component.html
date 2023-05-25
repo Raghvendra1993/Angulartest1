@@ -8,26 +8,26 @@
             id="navbarSupportedContent"
             basicNavbar="mdbCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link active" aria-current="page" routerLink="Home">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                <li class="nav-item" [routerLinkActive]="'active'">
+                    <a class="nav-link active" aria-current="page" [routerLink]="'About'">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Contact</a>
+                <li class="nav-item" [routerLinkActive]="'active'">
+                    <a class="nav-link active" [routerLink]="['Contact']">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Portfolio</a>
+                <li class="nav-item" [routerLinkActive]="'active'">
+                    <a class="nav-link active" routerLink="Portfolio">Portfolio</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Services</a>
+                <li class="nav-item" [routerLinkActive]="'active'">
+                    <a class="nav-link active" routerLink="Services">Services</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Resume</a>
+                <li class="nav-item" [routerLinkActive]="'active'">
+                    <a class="nav-link active" routerLink="#">Resume</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Blog</a>
+                <li class="nav-item" [routerLinkActive]="'active'">
+                    <a class="nav-link active" routerLink="#">Blog</a>
                 </li>
             </ul>
             <div ngbDropdown class="dropdown">
@@ -51,8 +51,5 @@
 </nav>
 
 <div>
-    <app-home></app-home>
-    <app-about></app-about>
-    <app-portfolio></app-portfolio>
-    <app-footer></app-footer>
+   
 </div>
