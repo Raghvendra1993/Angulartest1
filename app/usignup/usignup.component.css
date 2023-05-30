@@ -7,6 +7,7 @@ padding-right: .75em;
 .card-registration .select-arrow {
 top: 13px;
 }
-.btn:hover{
-    background-color:#96bb7c;
+
+input.ng-invalid.ng-touched{
+    border: red 1px solid;
 }

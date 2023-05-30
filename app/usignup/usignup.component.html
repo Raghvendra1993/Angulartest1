@@ -1,115 +1,252 @@
 <section class="bg-light">
-    <div class="container py-2 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col">
-                <div class="card card-registration my-4">
-                    <div class="row g-0">
-                        <div class="col-xl-6 d-none d-xl-block">
-                            <img [src]="usignup" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
-                        </div>
-                        <div class="col-xl-6">
-                        <div class="card-body p-md-5 text-black">
-                        <h3 class="mb-5 text-center">Registration Form</h3>
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="text" id="fname" class="form-control form-control-lg" placeholder="Enter First Name"/>
-                                    <label class="form-label" for="fname">First name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="text" id="lname" class="form-control form-control-lg" placeholder="Enter Last Name"/>
-                                    <label class="lname" for="lname">Last name</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-                            <h6 class="mb-0 me-4">Gender: </h6>
-                            <div class="form-check form-check-inline mb-0 me-4">
-                                <input class="form-check-input" type="radio" name="femaleGender" id="femaleGender"
-                                value="option1" />
-                                <label class="form-check-label" for="femaleGender">Female</label>
-                            </div>
-                            <div class="form-check form-check-inline mb-0 me-4">
-                                <input class="form-check-input" type="radio" name="maleGender" id="maleGender"
-                                value="option2" />
-                                <label class="form-check-label" for="maleGender">Male</label>
-                            </div>
-                            <div class="form-check form-check-inline mb-0">
-                                <input class="form-check-input" type="radio" name="otherGender" id="otherGender"
-                                value="option3" />
-                                <label class="form-check-label" for="otherGender">Other</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="form-group">
-                                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="date" style="width: 200px; height: 50px;"/>
-                                    <label class="control-label" for="date" >Select Date Of Bith</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="text" id="contact" class="form-control form-control-lg" placeholder="Enter Mobile No."/>
-                                    <label class="form-label" for="contact">Emter Your Contact</label>
+  <div class="container py-2 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img
+                [src]="usignup"
+                    alt="Sample photo"
+                    class="img-fluid"
+                    style="
+                    border-top-left-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;"/>
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-center">Registration Form</h3>
+                <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <label class="form-label" for="fname">First Name</label>
+                                <input
+                                type="text"
+                                id="fname"
+                                class="form-control form-control-lg"
+                                placeholder="Enter First Name"
+                                formControlName="firstName"/>
+                                <div>
+                                    <span style="color: red;" *ngIf="!reactiveForm.get('firstName').valid && reactiveForm.get('firstName').touched">Please Enter First Name</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="text" id="email" class="form-control form-control-lg" placeholder="Enter Email"/>
-                                    <label class="form-label" for="form3Example1m1">Emter Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="text" id="email" class="form-control form-control-lg" placeholder="Enter Password" />
-                                    <label class="form-label" for="email">Enter Password</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="text" id="address" class="form-control form-control-lg" placeholder="Enter Present Address" />
-                                    <label class="form-label" for="address">Address</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="text" id="areapin" class="form-control form-control-lg" placeholder="Enter Pin Code"/>
-                                    <label class="form-label" for="areapin">Pincode</label>
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <label class="form-label" for="lname">Last Name</label>
+                                <input
+                                type="text"
+                                id="lname"
+                                class="form-control form-control-lg"
+                                placeholder="Enter Last Name"
+                                formControlName="lastName"
+                                />
+                                <div>
+                                    <span style="color: red;" *ngIf="!reactiveForm.get
+                                    ('lastName').valid && reactiveForm.get('lastName').touched">Please Enter Last Name</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <select class="select" style=" width: 215px; height: 50px; border-radius: 10px;">
-                                    <option value="1">State</option>
-                                    <option value="2">Option 1</option>
-                                    <option value="3">Option 2</option>
-                                    <option value="4">Option 3</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <select class="select" style=" width: 215px; height: 50px; border-radius: 10px;">
-                                    <option value="1">City</option>
-                                    <option value="2">Option 1</option>
-                                    <option value="3">Option 2</option>
-                                    <option value="4">Option 3</option>
-                                </select>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <label class="form-label" for="date">Select Date Of Birth
+                                </label>
+                                <input
+                                class="form-control form-control-lg"
+                                id="date"
+                                formControlName="dob"
+                                placeholder="MM/DD/YY"
+                                type="date" style="width: 216px; height: 50px"/>
+                                <div>
+                                    <span style="color: red;" *ngIf="!reactiveForm.get
+                                    ('dob').valid && reactiveForm.get('dob').touched">Please Select Date Of Birth</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-center pt-3">
-                            <button type="button" class="btn btn-secondary btn-lg ms-2">Submit</button>
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <label class="form-label" for="contact">Enter Your Contact
+                                </label>
+                                <input
+                                type="text"
+                                class="form-control form-control-lg"
+                                formControlName="mobile"
+                                placeholder="Enter Mobile No."/>
+                                <div>
+                                    <span style="color: red;" *ngIf="!reactiveForm.get
+                                    ('mobile').valid && reactiveForm.get('mobile').touched">Please Enter 10 digit Mobile.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label">Enter Your Email</label>
+                            <input
+                            type="text"
+                            class="form-control form-control-lg"
+                            formControlName="emailAddress"
+                            placeholder="Enter Email" />
+                            <div>
+                                <span style="color: red;" *ngIf="!reactiveForm.get
+                                ('emailAddress').valid && reactiveForm.get('emailAddress').touched">Please Enter the Valid Email</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="email">Enter Password</label>
+                            <input
+                            type="password"
+                            class="form-control form-control-lg"
+                            formControlName="password"
+                            placeholder="Enter Password"/>
+                            <div>
+                                <span style="color: red;" *ngIf="!reactiveForm.get
+                                ('password').valid && reactiveForm.get('password').touched">Please Enter Pass Min 8 characters</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                    <h6 class="mb-0 me-4">Gender:</h6>
+                    <div class="form-check form-check-inline mb-0 me-4">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            id="female"
+                            formControlName="gender"
+                            value="female"/>
+                            
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline mb-0 me-4">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            id="male"
+                            formControlName="gender"
+                            value="male"/>
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline mb-0">
+                        <input
+                        class="form-check-input"
+                        type="radio"
+                        formControlName="gender"
+                        id="otherGender"
+                        value="other"/>
+                        <label class="form-check-label" for="other">Other</label>
+                    </div>
+                    <div>
+                        <span style="color: red;" *ngIf="!reactiveForm.get
+                        ('gender').valid && reactiveForm.get('gender').touched">Select Gender</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="address">Address</label>
+                            <input
+                            type="text"
+                            class="form-control form-control-lg"
+                            formControlName="address"
+                            placeholder="Enter Present Address"/>
+                            <div>
+                                <span style="color: red;" *ngIf="!reactiveForm.get
+                                ('address').valid && reactiveForm.get('address').touched">Please Enter Address</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="pincode">Pincode</label>
+                            <input
+                            type="text"
+                            class="form-control form-control-lg"
+                            formControlName="pincode"
+                            placeholder="Enter Pin Code"/>
+                            <div>
+                                <span style="color: red;" *ngIf="!reactiveForm.get
+                                ('pincode').valid && reactiveForm.get('pincode').touched">Please Enter 6 digit Pincode</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <label for="">Select State</label>
+                        <select
+                            class="select"
+                            style="width: 215px; height: 50px; border-radius: 10px"
+                            formControlName="state">
+                            <option value="">Select State</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="mp">Madhya Pradesh</option>
+                            <option value="up">Uttar Pradesh</option>
+                        </select>
+                        <div>
+                            <span style="color: red;" *ngIf="!reactiveForm.get
+                            ('state').valid && reactiveForm.get('state').touched">Please Select State</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <label for="">Select City</label>
+                        <select
+                        class="select"
+                        formControlName="city"
+                        style="width: 215px; height: 50px; border-radius: 10px">
+                        <option value="">Select City</option>
+                        <option value="patna">Patna</option>
+                        <option value="madhubani" >Madhubani</option>
+                        <option value="gaya" >Gaya</option>
+                        <option value="bhagalpur" >Bhagalpur</option>
+                        <option value="indore">Indore</option>
+                        <option value="bhopal" > Bhopal</option>
+                        <option value="gwalior" >Gwalior</option>
+                        <option value="rewa">Rewa</option>
+                        <option value="lucknow">Lucknow</option>
+                        <option value="allahabad">Allahabad</option>
+                        <option value="jhansi">Jhansi</option>
+                        <option value="kanpur">Kanpur</option>
+                        </select>
+                        <div>
+                            <span style="color: red;" *ngIf="!reactiveForm.get
+                            ('city').valid && reactiveForm.get('city').touched">Please Select City</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center text-lg-start mt-4 pt-2">
+                    <button type="button"
+                        (click)="onSubmit()"
+                        class="btn btn-secondary btn-lg"
+                        style="
+                        width: 120px;
+                        height: 50px;
+                        border-radius: 30px;
+                        border: none;
+                        background-color: #96bb7c;">Submit
+                    </button>
+                </div>
+                <p class="small fw-bold mt-2 pt-1 mb-0">
+                    If you have already registered?<a
+                      class="link-danger"
+                      style="cursor: pointer"
+                      (click)="navigateToLogin()">Login</a>
+                </p>
+            </form>
         </div>
     </div>
-      </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
 </section>

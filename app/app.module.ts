@@ -15,19 +15,20 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { MyservicesComponent } from './myservices/myservices.component';
 import { ErrorComponent } from './error/error.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const appRoute:Routes = [
   
   {path:'',component:HomeComponent},
   // {path:'',redirectTo:'Home',pathMatch:'full'},
-  {path:'Home',component:HomeComponent},
-  {path:'About',component:AboutComponent},
-  {path:'Portfolio',component:PortfolioComponent},
-  {path:'Services',component:MyservicesComponent},
-  {path:'Contact',component:ContactComponent},
-  {path:'Login',component:UloginComponent},
-  {path:'SingUp',component:UsignupComponent},
+  {path:'home',component:HomeComponent},
+  {path:'about',component:AboutComponent},
+  {path:'portfolio',component:PortfolioComponent},
+  {path:'services',component:MyservicesComponent},
+  {path:'contact',component:ContactComponent},
+  {path:'login',component:UloginComponent},
+  {path:'signUp',component:UsignupComponent},
   {path:'**', component:ErrorComponent}
 
 ]
@@ -51,7 +52,9 @@ const appRoute:Routes = [
   imports: [
     BrowserModule,
     NgbModule,
-    RouterModule.forRoot(appRoute)
+    RouterModule.forRoot(appRoute),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

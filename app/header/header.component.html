@@ -9,19 +9,19 @@
             basicNavbar="mdbCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">
-                    <a class="nav-link active" aria-current="page" routerLink="Home">Home</a>
+                    <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="'active'">
-                    <a class="nav-link active" aria-current="page" [routerLink]="'About'">About</a>
+                    <a class="nav-link active" aria-current="page" [routerLink]="'about'">About</a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="'active'">
-                    <a class="nav-link active" [routerLink]="['Contact']">Contact</a>
+                    <a class="nav-link active" [routerLink]="['contact']">Contact</a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="'active'">
-                    <a class="nav-link active" routerLink="Portfolio">Portfolio</a>
+                    <a class="nav-link active" routerLink="portfolio">Portfolio</a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="'active'">
-                    <a class="nav-link active" routerLink="Services">Services</a>
+                    <a class="nav-link active" routerLink="services">Services</a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="'active'">
                     <a class="nav-link active" routerLink="#">Resume</a>
@@ -38,8 +38,8 @@
                     aria-expanded="false" ngbDropdownToggle>User
                 </button>
                 <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-dark" routerLinkActive="active">
-                    <li><a class="dropdown-item" routerLink="Login">Login</a></li>
-                    <li><a class="dropdown-item" routerLink="SingUp">Sign Up</a></li>
+                    <li><a class="dropdown-item" routerLink="login">Login</a></li>
+                    <li><a class="dropdown-item" routerLink="signUp">Sign Up</a></li>
                 </ul>
             </div>
             <form class="d-flex input-group w-auto">

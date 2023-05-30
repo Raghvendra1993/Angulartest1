@@ -6,7 +6,9 @@ height: 1px;
 background: #eee;
 }
 .btn{
+    border: none;
     border-radius: 50%;
+
 }
 .btn:hover{
     background-color:#96bb7c ;

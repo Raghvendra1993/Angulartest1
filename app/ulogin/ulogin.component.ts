@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,12 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UloginComponent implements OnInit {
   
+
+
+
+  
   ulogin:string='assets/images/login_background.jpg'
-  constructor(){
+  constructor(private _router: Router){
 
   }
+
+  
   ngOnInit(): void {
     
   }
+  login(){
+    // this.loginData.push(this.loginObj);
+    // localStorage.getItem('signUpData',JSON.stringify(this.signUpData))
+    // this.loginObj = {
+    //   email:'',
+    //   password:''
+    // };
+  }
 
+  navigateToRegister() {
+    this._router.navigate(['signUp'])
+  }
 }
