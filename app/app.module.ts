@@ -16,6 +16,7 @@ import { MyservicesComponent } from './myservices/myservices.component';
 import { ErrorComponent } from './error/error.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserdataComponent } from './userdata/userdata.component';
 
 
 const appRoute:Routes = [
@@ -46,7 +47,8 @@ const appRoute:Routes = [
     PortfolioComponent,
     MyservicesComponent,
     ErrorComponent,
-    ContactComponent
+    ContactComponent,
+    UserdataComponent
     
   ],
   imports: [

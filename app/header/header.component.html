@@ -26,10 +26,24 @@
                 <li class="nav-item" [routerLinkActive]="'active'">
                     <a class="nav-link active" routerLink="#">Resume</a>
                 </li>
-                <li class="nav-item" [routerLinkActive]="'active'">
-                    <a class="nav-link active" routerLink="#">Blog</a>
-                </li>
             </ul>
+
+            <div ngbDropdown class="dropdown">
+                <button
+                    class="btn btn-dark dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false" ngbDropdownToggle>Today News
+                </button>
+                <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-dark" routerLinkActive="active">
+                    <li><a class="dropdown-item" routerLink="#">All News</a></li>
+                    <li><a class="dropdown-item" routerLink="#">Top Headline</a></li>
+                    <li><a class="dropdown-item" routerLink="#">Business</a></li>
+                    <li><a class="dropdown-item" routerLink="#">Sports</a></li>
+                    <li><a class="dropdown-item" routerLink="#">Technology</a></li>
+                </ul>
+            </div>
+
             <div ngbDropdown class="dropdown">
                 <button
                     class="btn btn-dark dropdown-toggle"
@@ -40,6 +54,7 @@
                 <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-dark" routerLinkActive="active">
                     <li><a class="dropdown-item" routerLink="login">Login</a></li>
                     <li><a class="dropdown-item" routerLink="signUp">Sign Up</a></li>
+                    <li><a class="dropdown-item" routerLink="#">User Data</a></li>
                 </ul>
             </div>
             <form class="d-flex input-group w-auto">

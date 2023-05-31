@@ -16,7 +16,7 @@
             <div class="col-xl-6">
               <div class="card-body p-md-5 text-black">
                 <h3 class="mb-5 text-center">Registration Form</h3>
-                <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="form-outline">
@@ -26,9 +26,13 @@
                                 id="fname"
                                 class="form-control form-control-lg"
                                 placeholder="Enter First Name"
-                                formControlName="firstName"/>
+                                formControlName="firstName" ngModel=""/>
                                 <div>
-                                    <span style="color: red;" *ngIf="!reactiveForm.get('firstName').valid && reactiveForm.get('firstName').touched">Please Enter First Name</span>
+                                    <span style="color: red;" *ngIf="!signUpForm.get('firstName').valid && signUpForm.get('firstName').touched">Please Enter First Name
+                                    </span>
+                                    <!-- <span *ngIf="signUpForm.get('signUpForm.firstName').errors?.['noSpaceAllowed']">
+                                        Space Not Allowed 
+                                    </span> -->
                                 </div>
                             </div>
                         </div>
@@ -40,11 +44,11 @@
                                 id="lname"
                                 class="form-control form-control-lg"
                                 placeholder="Enter Last Name"
-                                formControlName="lastName"
-                                />
+                                formControlName="lastName" ngModel=""/>
                                 <div>
-                                    <span style="color: red;" *ngIf="!reactiveForm.get
-                                    ('lastName').valid && reactiveForm.get('lastName').touched">Please Enter Last Name</span>
+                                    <span style="color: red;" *ngIf="!signUpForm.get
+                                        ('lastName').valid && signUpForm.get('lastName').touched">Please Enter Last Name
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -58,12 +62,12 @@
                                 <input
                                 class="form-control form-control-lg"
                                 id="date"
-                                formControlName="dob"
+                                formControlName="dob" ngModel=""
                                 placeholder="MM/DD/YY"
                                 type="date" style="width: 216px; height: 50px"/>
                                 <div>
-                                    <span style="color: red;" *ngIf="!reactiveForm.get
-                                    ('dob').valid && reactiveForm.get('dob').touched">Please Select Date Of Birth</span>
+                                    <span style="color: red;" *ngIf="!signUpForm.get
+                                    ('dob').valid && signUpForm.get('dob').touched">Please Select Date Of Birth</span>
                                 </div>
                             </div>
                         </div>
@@ -74,11 +78,11 @@
                                 <input
                                 type="text"
                                 class="form-control form-control-lg"
-                                formControlName="mobile"
+                                formControlName="mobile" ngModel=""
                                 placeholder="Enter Mobile No."/>
                                 <div>
-                                    <span style="color: red;" *ngIf="!reactiveForm.get
-                                    ('mobile').valid && reactiveForm.get('mobile').touched">Please Enter 10 digit Mobile.</span>
+                                    <span style="color: red;" *ngIf="!signUpForm.get
+                                    ('mobile').valid && signUpForm.get('mobile').touched">Please Enter 10 digit Mobile.</span>
                                 </div>
                             </div>
                         </div>
@@ -91,11 +95,11 @@
                             <input
                             type="text"
                             class="form-control form-control-lg"
-                            formControlName="emailAddress"
+                            formControlName="emailAddress" ngModel=""
                             placeholder="Enter Email" />
                             <div>
-                                <span style="color: red;" *ngIf="!reactiveForm.get
-                                ('emailAddress').valid && reactiveForm.get('emailAddress').touched">Please Enter the Valid Email</span>
+                                <span style="color: red;" *ngIf="!signUpForm.get
+                                ('emailAddress').valid && signUpForm.get('emailAddress').touched">Please Enter the Valid Email</span>
                             </div>
                         </div>
                     </div>
@@ -105,11 +109,11 @@
                             <input
                             type="password"
                             class="form-control form-control-lg"
-                            formControlName="password"
+                            formControlName="password" ngModel=""
                             placeholder="Enter Password"/>
                             <div>
-                                <span style="color: red;" *ngIf="!reactiveForm.get
-                                ('password').valid && reactiveForm.get('password').touched">Please Enter Pass Min 8 characters</span>
+                                <span style="color: red;" *ngIf="!signUpForm.get
+                                ('password').valid && signUpForm.get('password').touched">Please Enter Pass Min 8 characters</span>
                             </div>
                         </div>
                     </div>
@@ -121,7 +125,7 @@
                             class="form-check-input"
                             type="radio"
                             id="female"
-                            formControlName="gender"
+                            formControlName="gender" ngModel=""
                             value="female"/>
                             
                         <label class="form-check-label" for="female">Female</label>
@@ -131,7 +135,7 @@
                             class="form-check-input"
                             type="radio"
                             id="male"
-                            formControlName="gender"
+                            formControlName="gender" ngModel=""
                             value="male"/>
                         <label class="form-check-label" for="male">Male</label>
                     </div>
@@ -139,14 +143,14 @@
                         <input
                         class="form-check-input"
                         type="radio"
-                        formControlName="gender"
+                        formControlName="gender" ngModel=""
                         id="otherGender"
                         value="other"/>
                         <label class="form-check-label" for="other">Other</label>
                     </div>
                     <div>
-                        <span style="color: red;" *ngIf="!reactiveForm.get
-                        ('gender').valid && reactiveForm.get('gender').touched">Select Gender</span>
+                        <span style="color: red;" *ngIf="!signUpForm.get
+                        ('gender').valid && signUpForm.get('gender').touched">Select Gender</span>
                     </div>
                 </div>
 
@@ -157,11 +161,11 @@
                             <input
                             type="text"
                             class="form-control form-control-lg"
-                            formControlName="address"
+                            formControlName="address" ngModel=""
                             placeholder="Enter Present Address"/>
                             <div>
-                                <span style="color: red;" *ngIf="!reactiveForm.get
-                                ('address').valid && reactiveForm.get('address').touched">Please Enter Address</span>
+                                <span style="color: red;" *ngIf="!signUpForm.get
+                                ('address').valid && signUpForm.get('address').touched">Please Enter Address</span>
                             </div>
                         </div>
                     </div>
@@ -171,11 +175,11 @@
                             <input
                             type="text"
                             class="form-control form-control-lg"
-                            formControlName="pincode"
+                            formControlName="pincode" ngModel=""
                             placeholder="Enter Pin Code"/>
                             <div>
-                                <span style="color: red;" *ngIf="!reactiveForm.get
-                                ('pincode').valid && reactiveForm.get('pincode').touched">Please Enter 6 digit Pincode</span>
+                                <span style="color: red;" *ngIf="!signUpForm.get
+                                ('pincode').valid && signUpForm.get('pincode').touched">Please Enter 6 digit Pincode</span>
                             </div>
                         </div>
                     </div>
@@ -186,22 +190,22 @@
                         <select
                             class="select"
                             style="width: 215px; height: 50px; border-radius: 10px"
-                            formControlName="state">
+                            formControlName="state" ngModel="">
                             <option value="">Select State</option>
                             <option value="bihar">Bihar</option>
                             <option value="mp">Madhya Pradesh</option>
                             <option value="up">Uttar Pradesh</option>
                         </select>
                         <div>
-                            <span style="color: red;" *ngIf="!reactiveForm.get
-                            ('state').valid && reactiveForm.get('state').touched">Please Select State</span>
+                            <span style="color: red;" *ngIf="!signUpForm.get
+                            ('state').valid && signUpForm.get('state').touched">Please Select State</span>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <label for="">Select City</label>
                         <select
                         class="select"
-                        formControlName="city"
+                        formControlName="city" ngModel=""
                         style="width: 215px; height: 50px; border-radius: 10px">
                         <option value="">Select City</option>
                         <option value="patna">Patna</option>
@@ -218,8 +222,8 @@
                         <option value="kanpur">Kanpur</option>
                         </select>
                         <div>
-                            <span style="color: red;" *ngIf="!reactiveForm.get
-                            ('city').valid && reactiveForm.get('city').touched">Please Select City</span>
+                            <span style="color: red;" *ngIf="!signUpForm.get
+                            ('city').valid && signUpForm.get('city').touched">Please Select City</span>
                         </div>
                     </div>
                 </div>

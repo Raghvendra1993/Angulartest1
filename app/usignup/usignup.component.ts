@@ -12,30 +12,24 @@ export class UsignupComponent implements OnInit {
   
   usignup:string='assets/images/signup.jpg'
   
-  reactiveForm: FormGroup;
-  
-  
+  signUpForm: FormGroup;
   
   constructor(private _router: Router){
 
   }
-  
-  
-  
-  ngOnInit() {
+ ngOnInit() {
 
-    this.reactiveForm = new FormGroup({
+    this.signUpForm = new FormGroup({
     
-      firstName : new FormControl(null ,Validators.required),
-      lastName : new FormControl(null ,Validators.required),
+      firstName : new FormControl(null ,[Validators.required,this.noSpaceAllowed]),
+      lastName : new FormControl(null ,[Validators.required ,this.noSpaceAllowed]),
       dob: new FormControl(null , Validators.required),
-      mobile: new FormControl(null ,[Validators.required ,Validators.minLength(10) ,Validators.maxLength(10)]),
-      emailAddress: new FormControl(null ,[Validators.required, Validators.email]),
-      password: new FormControl(null ,[Validators.required , Validators.minLength(8)]),
-      
+      mobile: new FormControl(null ,[Validators.required , this.noSpaceAllowed ,Validators.minLength(10) ,Validators.maxLength(10)]),
+      emailAddress: new FormControl(null ,[Validators.required, this.noSpaceAllowed, Validators.email]),
+      password: new FormControl(null ,[Validators.required ,this.noSpaceAllowed, Validators.minLength(8)]),
       gender : new FormControl(null , [Validators.required] ),
       address: new FormControl(null ,Validators.required),
-      pincode: new FormControl(null,[Validators.required , Validators.minLength(6) ,Validators.maxLength(6)]),
+      pincode: new FormControl(null,[Validators.required ,this.noSpaceAllowed, Validators.minLength(6) ,Validators.maxLength(6)]),
       state: new FormControl(null , Validators.required),
       city: new FormControl(null , Validators.required)
   });
@@ -47,8 +41,29 @@ export class UsignupComponent implements OnInit {
     this._router.navigate(['login'])
   }
 
+  noSpaceAllowed(control : FormControl){
+    if(control.value != null && control.value.indexOf(' ') != -1){
+      return {noSpaceAllowed : true}
+    }
+    return null;
+}
+
   onSubmit(){
-    console.log(this.reactiveForm.value);
+    console.log(this.signUpForm.value);
+    this.signUpForm.reset({
+      firstName:'',
+      lastName:'',
+      dob:'',
+      emailAddress:'',
+      mobile:'',
+      password:'',
+      address:'',
+      pincode:'',
+      gender:'',
+      state:'',
+      city:''
+    })
+
     
   }
 
