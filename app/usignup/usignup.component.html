@@ -16,7 +16,7 @@
             <div class="col-xl-6">
               <div class="card-body p-md-5 text-black">
                 <h3 class="mb-5 text-center">Registration Form</h3>
-                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" >
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="form-outline">
@@ -27,10 +27,10 @@
                                 class="form-control form-control-lg"
                                 placeholder="Enter First Name"
                                 formControlName="firstName" ngModel=""/>
-                                <div>
+                                <div class="text-danger">
                                     <span style="color: red;" *ngIf="!signUpForm.get('firstName').valid && signUpForm.get('firstName').touched">Please Enter First Name
                                     </span>
-                                    <!-- <span *ngIf="signUpForm.get('signUpForm.firstName').errors?.['noSpaceAllowed']">
+                                    <!-- <span style="color: red;"*ngIf="signUpForm.get('signUpForm.firstName').errors?.['noSpaceAllowed']">
                                         Space Not Allowed 
                                     </span> -->
                                 </div>
@@ -49,6 +49,9 @@
                                     <span style="color: red;" *ngIf="!signUpForm.get
                                         ('lastName').valid && signUpForm.get('lastName').touched">Please Enter Last Name
                                     </span>
+                                    <!-- <span style="color: red;"*ngIf="signUpForm.get('signUpForm.lastName').errors?.['noSpaceAllowed']">
+                                        Space Not Allowed 
+                                    </span> -->
                                 </div>
                             </div>
                         </div>
@@ -62,9 +65,8 @@
                                 <input
                                 class="form-control form-control-lg"
                                 id="date"
-                                formControlName="dob" ngModel=""
-                                placeholder="MM/DD/YY"
-                                type="date" style="width: 216px; height: 50px"/>
+                                formControlName="dob" ngModel="" 
+                                type="date" min="1980-01-01" max="2012-12-31" style="width: 216px; height: 50px"/>
                                 <div>
                                     <span style="color: red;" *ngIf="!signUpForm.get
                                     ('dob').valid && signUpForm.get('dob').touched">Please Select Date Of Birth</span>
@@ -118,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2" aria-required="true">
                     <h6 class="mb-0 me-4">Gender:</h6>
                     <div class="form-check form-check-inline mb-0 me-4">
                         <input
@@ -193,8 +195,8 @@
                             formControlName="state" ngModel="">
                             <option value="">Select State</option>
                             <option value="bihar">Bihar</option>
-                            <option value="mp">Madhya Pradesh</option>
-                            <option value="up">Uttar Pradesh</option>
+                            <option value="madhya_pradesh">Madhya Pradesh</option>
+                            <option value="uttar_pradesh">Uttar Pradesh</option>
                         </select>
                         <div>
                             <span style="color: red;" *ngIf="!signUpForm.get
@@ -228,15 +230,9 @@
                     </div>
                 </div>
                 <div class="text-center text-lg-start mt-4 pt-2">
-                    <button type="button"
-                        (click)="onSubmit()"
-                        class="btn btn-secondary btn-lg"
-                        style="
-                        width: 120px;
-                        height: 50px;
-                        border-radius: 30px;
-                        border: none;
-                        background-color: #96bb7c;">Submit
+                    <button type="submit" class="btn btn-secondary btn-lg" onclick="" 
+                    style="width: 120px; height: 50px; border-radius: 30px; border: none;
+                    background-color: #96bb7c;">Submit
                     </button>
                 </div>
                 <p class="small fw-bold mt-2 pt-1 mb-0">

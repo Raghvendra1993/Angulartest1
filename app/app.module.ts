@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule,Routes } from '@angular/router';
+import { HttpClientModule } from   '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -15,8 +17,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { MyservicesComponent } from './myservices/myservices.component';
 import { ErrorComponent } from './error/error.component';
 import { ContactComponent } from './contact/contact.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserdataComponent } from './userdata/userdata.component';
+
 
 
 const appRoute:Routes = [
@@ -47,8 +48,7 @@ const appRoute:Routes = [
     PortfolioComponent,
     MyservicesComponent,
     ErrorComponent,
-    ContactComponent,
-    UserdataComponent
+    ContactComponent
     
   ],
   imports: [
@@ -56,7 +56,8 @@ const appRoute:Routes = [
     NgbModule,
     RouterModule.forRoot(appRoute),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

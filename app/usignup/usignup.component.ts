@@ -1,6 +1,9 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup ,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
+import { UserdataService } from '../services/userdata.service';
 
 @Component({
   selector: 'app-usignup',
@@ -14,7 +17,7 @@ export class UsignupComponent implements OnInit {
   
   signUpForm: FormGroup;
   
-  constructor(private _router: Router){
+  constructor(private _router: Router , private http:HttpClient , private userdataService:UserdataService){
 
   }
  ngOnInit() {
@@ -33,9 +36,8 @@ export class UsignupComponent implements OnInit {
       state: new FormControl(null , Validators.required),
       city: new FormControl(null , Validators.required)
   });
-    
+  
   }
-
 
   navigateToLogin(){
     this._router.navigate(['login'])
@@ -48,23 +50,31 @@ export class UsignupComponent implements OnInit {
     return null;
 }
 
+
   onSubmit(){
-    console.log(this.signUpForm.value);
-    this.signUpForm.reset({
-      firstName:'',
-      lastName:'',
-      dob:'',
-      emailAddress:'',
-      mobile:'',
-      password:'',
-      address:'',
-      pincode:'',
-      gender:'',
-      state:'',
-      city:''
-    })
+    
+
+      console.log(this.signUpForm.value);
+
+    // this.signUpForm.reset({
+    //   firstName:'',
+    //   lastName:'',
+    //   dob:'',
+    //   emailAddress:'',
+    //   mobile:'',
+    //   password:'',
+    //   address:'',
+    //   pincode:'',
+    //   gender:'',
+    //   state:'',
+    //   city:''
+    // })
 
     
   }
 
+onSaveUsersData(){
+  this.userdataService.saveUsersData()
+}
+ 
 }
