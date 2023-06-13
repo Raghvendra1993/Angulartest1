@@ -17,6 +17,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { MyservicesComponent } from './myservices/myservices.component';
 import { ErrorComponent } from './error/error.component';
 import { ContactComponent } from './contact/contact.component';
+import { UserdataService } from './services/userdata.service';
+import { UsersdataComponent } from './usersdata/usersdata.component';
 
 
 
@@ -31,6 +33,7 @@ const appRoute:Routes = [
   {path:'contact',component:ContactComponent},
   {path:'login',component:UloginComponent},
   {path:'signUp',component:UsignupComponent},
+  {path:'usersdata',component:UsersdataComponent},
   {path:'**', component:ErrorComponent}
 
 ]
@@ -48,7 +51,8 @@ const appRoute:Routes = [
     PortfolioComponent,
     MyservicesComponent,
     ErrorComponent,
-    ContactComponent
+    ContactComponent,
+    UsersdataComponent
     
   ],
   imports: [
@@ -59,7 +63,7 @@ const appRoute:Routes = [
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserdataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

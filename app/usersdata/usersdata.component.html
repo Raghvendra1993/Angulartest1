@@ -1,0 +1,24 @@
+<h1 style="text-align: center; margin-top: 20px;">Data Come From API</h1>
+
+<table style=" border: 1px; margin-top: 30px;margin-left: 20px;">
+    <tr style="border: 1px; justify-items: center;">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>UserName</th>
+        <th>Website</th>
+        <th>Company</th>
+        <th>Address</th>
+    </tr>
+    <tr *ngFor="let user of userData$ |async">
+        <td>{{user.id}}&nbsp;&nbsp;</td>
+        <td>{{user.name}}&nbsp;&nbsp;</td>
+        <td>{{user.email}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>{{user.phone}}&nbsp;&nbsp;</td>
+        <td>{{user.username}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>{{user.website}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>{{user.company.name}},{{user.company.bs}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>{{user.address.street}},{{user.address.city}}, - {{user.address.zipcode}}</td>
+    </tr>
+</table>

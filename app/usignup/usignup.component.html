@@ -16,7 +16,7 @@
             <div class="col-xl-6">
               <div class="card-body p-md-5 text-black">
                 <h3 class="mb-5 text-center">Registration Form</h3>
-                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" >
+                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm.value)" >
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="form-outline">
@@ -230,10 +230,11 @@
                     </div>
                 </div>
                 <div class="text-center text-lg-start mt-4 pt-2">
-                    <button type="submit" class="btn btn-secondary btn-lg" onclick="" 
+                    <button type="submit"[disabled]="signUpForm.invalid" class="btn btn-secondary btn-lg" onclick="" 
                     style="width: 120px; height: 50px; border-radius: 30px; border: none;
                     background-color: #96bb7c;">Submit
                     </button>
+                    <p *ngIf="isSubmit" class="submitMessage" style="color: green; font-weight: bold;">{{submitMessage}}</p>
                 </div>
                 <p class="small fw-bold mt-2 pt-1 mb-0">
                     If you have already registered?<a
