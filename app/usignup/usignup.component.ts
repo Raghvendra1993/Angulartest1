@@ -52,45 +52,29 @@ export class UsignupComponent implements OnInit {
 }
 
 
-  onSubmit(data:any){
+  onSubmit(_signUpForm){
     this.isSubmit = true;
-    console.log(data);
+    // console.log(data);
     this.submitMessage = "Submitted Successfully";
     setTimeout(() => {
     this.isSubmit=false;
   },5000);
-    
-    
-          
-      
+
+  console.log("Global SignUpForm before",this.signUpForm.value);
+  console.log("Signform without ",_signUpForm);
   
+  this.userdataService.saveRegisteredData(_signUpForm).subscribe((result)=>{
+  console.log("result of post api",result);
 
-
-    // this.signUpForm.reset({
-    //   firstName:'',
-    //   lastName:'',
-    //   dob:'',
-    //   emailAddress:'',
-    //   mobile:'',
-    //   password:'',
-    //   address:'',
-    //   pincode:'',
-    //   gender:'',
-    //   state:'',
-    //   city:''
-    // })
-
+  })
+  
     
   }
 
-onSaveUsersData(){
-  console.log(this.signUpForm.value);
-  this.http.post('https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser.json',this.signUpForm)
-  .subscribe((res) =>{
-    console.log(res);
-    
-  });
-
+onSaveUsersData(_signUpForm){
+  
+  
+  
 }
 
  

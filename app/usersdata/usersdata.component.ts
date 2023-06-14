@@ -11,10 +11,12 @@ export class UsersdataComponent {
 
   // userData:any =[];
 
-  userData$:Observable<any>
+  usersData$:Observable<any>
   constructor(private userdataService:UserdataService){
 
-    this.userData$ = this.userdataService.getUserData();
+    this.usersData$ = this.userdataService.fetchUsersData();
+    console.log(this.usersData$);
+    
      
 // using Subscribe
 

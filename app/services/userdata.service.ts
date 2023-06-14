@@ -6,39 +6,43 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserdataService {
-  // signUpForm:any
+  signUpForm:any
 
-  constructor(private httpClient:HttpClient) { }
+  // const headers= new HttpHeaders()
+  // .set('content-type', 'application/json')
+  // .set('Access-Control-Allow-Origin', '*');
+
+  constructor(private http:HttpClient) { }
 
  
+saveRegisteredData(body: any){
+  // console.log(this.signUpForm.value);
 
-    //   return this.httpClient.post<boolean>(
-    //   'https://api.restful-api.dev/objects/userdata.json', data).subscribe((signUpForm) =>{
-    //   console.log(signUpForm);
-    // });
-    // const headers = new HttpHeaders({'myHeader':'demoproject'});
-    // return this.httpClient.post<any>(
-    // 'https://api.restful-api.dev/objects/userdata.json', signUpForm).subscribe((signUpForm) =>{
-    //   console.log(signUpForm);
-    // });
+
+  // const body=JSON.stringify(person);
+  // console.log(body)
+  return this.http.post("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user.json", body)
+
+  // const headers = new HttpHeaders({'myHeaders':'testproject'});
+  // this.http.post<{name:string}>('https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user.json',
+  // this.signUpForm,{headers:headers})
+  // .subscribe((res) =>{
+  //   console.log(res);
     
- 
-
- 
-//  deleteUsersData(){
-
-//  }
-//  deleteAllUsersData(){
-
-//  }
-saveUserData(){
+  // });
   
 }
 
-
-getUserData(){
+fetchUsersData(){
   let apiurl = 'https://jsonplaceholder.typicode.com/users';
-  return this.httpClient.get(apiurl)
+  console.log(apiurl);
+  return this.http.get(apiurl)
+  
+  
+}
+
+deleteUsersData(){
+
 }
 
   
