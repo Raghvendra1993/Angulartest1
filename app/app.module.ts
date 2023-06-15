@@ -19,6 +19,7 @@ import { ErrorComponent } from './error/error.component';
 import { ContactComponent } from './contact/contact.component';
 import { UserdataService } from './services/userdata.service';
 import { UsersdataComponent } from './usersdata/usersdata.component';
+import { UserPipe } from './pipes/user.pipe';
 
 
 
@@ -52,7 +53,8 @@ const appRoute:Routes = [
     MyservicesComponent,
     ErrorComponent,
     ContactComponent,
-    UsersdataComponent
+    UsersdataComponent,
+    UserPipe
     
   ],
   imports: [

@@ -53,29 +53,30 @@ export class UsignupComponent implements OnInit {
 
 
   onSubmit(_signUpForm){
-    this.isSubmit = true;
-    // console.log(data);
-    this.submitMessage = "Submitted Successfully";
-    setTimeout(() => {
-    this.isSubmit=false;
-  },5000);
-
+   
   console.log("Global SignUpForm before",this.signUpForm.value);
   console.log("Signform without ",_signUpForm);
   
   this.userdataService.saveRegisteredData(_signUpForm).subscribe((result)=>{
   console.log("result of post api",result);
+  alert("Submitted Successfully");
+});
 
-  })
-  
-    
-  }
-
-onSaveUsersData(_signUpForm){
-  
-  
-  
+if (this.signUpForm.valid) {
+  console.log("Form Submitted!");
+  this.signUpForm.reset();
 }
+// Show Message Form Submitted Successfully
+
+this.isSubmit = true;
+this.submitMessage = "Submitted Successfully";
+setTimeout(() => {
+this.isSubmit=false;
+},5000);
+
+    
+}
+
 
  
 }

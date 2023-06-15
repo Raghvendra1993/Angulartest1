@@ -1,24 +1,39 @@
-<h1 style="text-align: center; margin-top: 20px;">Data Come From API</h1>
-
-<table style=" border: 1px; margin-top: 30px;margin-left: 20px;">
+<div class="User_Data_Display">
+    <h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px;">Registered Users</h1>
+<table id="user">
     <tr style="border: 1px; justify-items: center;">
         <th>Id</th>
-        <th>Name</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>D/O/B</th>
+        <th>Contact</th>
         <th>Email</th>
-        <th>Phone</th>
-        <th>UserName</th>
-        <th>Website</th>
-        <th>Company</th>
+        <th>Password</th>
+        <th>Gender</th>
         <th>Address</th>
+        <th>Pincode</th>
+        <th>State</th>
+        <th>City</th>
+        <th>Actions</th>
     </tr>
-    <tr *ngFor="let user of usersData$ |async">
-        <td>{{user.id}}&nbsp;&nbsp;</td>
-        <td>{{user.name}}&nbsp;&nbsp;</td>
-        <td>{{user.email}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>{{user.phone}}&nbsp;&nbsp;</td>
-        <td>{{user.username}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>{{user.website}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>{{user.company.name}},{{user.company.bs}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>{{user.address.street}},{{user.address.city}}, - {{user.address.zipcode}}</td>
+    <tr *ngFor="let user of allUsersData index as i">
+        <td>{{i+1}}</td>
+        <td>{{user.firstName | uppercase}}</td>
+        <td>{{user.lastName | uppercase}}</td>
+        <td>{{user.dob }}</td>
+        <td>{{user.mobile }}</td>
+        <td>{{user.emailAddress | titlecase}}</td>
+        <td>{{user.password | uppercase}}</td>
+        <td>{{user.gender | titlecase}}</td>
+        <td>{{user.address| uppercase}}</td>
+        <td>{{user.pincode}}</td>
+        <td>{{user.state | uppercase}}</td>
+        <td>{{user.city | uppercase}}</td>
+        <td><button class="btn-delete" onclick="onDeleteData(id)">Delete</button></td>
     </tr>
 </table>
+<div class="btn-action">
+    <button class="btn-all-delete">All Delete</button>
+</div>
+
+</div>
