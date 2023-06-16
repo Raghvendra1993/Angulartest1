@@ -11,20 +11,19 @@ export class UserdataService {
 
  
 saveRegisteredData(body: any){
-  return this.http.post("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user.json", body)
+  return this.http.post("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user.json", body);
   
 }
 
 fetchUsersData(){
- return this.http.get("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user.json") 
+ return this.http.get("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user.json");
   
   
   
 }
 
 deleteUsersData(id:string){
-  this.http.delete('"https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/'+id+'.json')
-  .subscribe()
+  this.http.delete("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/'+id+'.json");
 }
 
   

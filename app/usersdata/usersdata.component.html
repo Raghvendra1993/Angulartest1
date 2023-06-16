@@ -6,6 +6,7 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th>D/O/B</th>
+        <th>Age(Year)</th>
         <th>Contact</th>
         <th>Email</th>
         <th>Password</th>
@@ -21,19 +22,23 @@
         <td>{{user.firstName | uppercase}}</td>
         <td>{{user.lastName | uppercase}}</td>
         <td>{{user.dob }}</td>
+        <td>{{user.dob | age }}</td>
         <td>{{user.mobile }}</td>
         <td>{{user.emailAddress | titlecase}}</td>
         <td>{{user.password | uppercase}}</td>
         <td>{{user.gender | titlecase}}</td>
-        <td>{{user.address| uppercase}}</td>
+        <td>{{user.address | titlecase}}</td>
         <td>{{user.pincode}}</td>
-        <td>{{user.state | uppercase}}</td>
-        <td>{{user.city | uppercase}}</td>
-        <td><button class="btn-delete" onclick="onDeleteData(id)">Delete</button></td>
+        <td>{{user.state | titlecase}}</td>
+        <td>{{user.city | titlecase}}</td>
+        <td>
+            <button class="btn-Edit" (click)="onEditData(user.id)"><i class="fas fa-edit"></i></button>
+            <button class="btn-delete"(click)="onDeleteData(user.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
     </tr>
 </table>
 <div class="btn-action">
-    <button class="btn-all-delete">All Delete</button>
+    <button class="btn-fetch" (click)="onFetchData()">Show Registered User</button>
 </div>
 
 </div>
