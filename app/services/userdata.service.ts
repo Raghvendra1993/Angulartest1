@@ -22,8 +22,14 @@ fetchUsersData(){
   
 }
 
-deleteUsersData(id:string){
-  this.http.delete("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/'+id+'.json");
+
+deleteUsersData(userId){
+  this.http.delete("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/"+userId+".json");
+}
+
+updateUsersData(userId){
+  this.http.delete("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/"+userId+".json"); 
+
 }
 
   

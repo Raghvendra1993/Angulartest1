@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserdataService } from '../services/userdata.service';
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Route } from '@angular/router';
+import { UsignupComponent } from '../usignup/usignup.component';
 // import { UserPipe } from '../pipes/user.pipe';
 
 
@@ -11,10 +13,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./usersdata.component.css']
 })
 export class UsersdataComponent implements OnInit{
+  [x: string]: any;
 
-  isFetching:boolean = false;
+  isFetching:boolean = true;
   allUsersData:any;
-  id:string;
+  userId:string;
 
   
   constructor(private http:HttpClient, private userdataService:UserdataService){}
@@ -26,31 +29,40 @@ export class UsersdataComponent implements OnInit{
       const regUsers = [];
       for(const key in user){
         if(user.hasOwnProperty(key)){
-          regUsers.push({...user[key],id :key})
-        }
+          regUsers.push({userId :key,...user[key]})
+        } 
         }
         return regUsers;
     })).subscribe((regUsers) => {
     console.log("User",regUsers);
     this.allUsersData = regUsers
-  
-    })
 
-  }
-
-  onDeleteData(id:string){
-    // this.userdataService.deleteUsersData(id).subscribe(()=>{})
-    
-  } 
-
-
-
-onEditData(id:string){
+  })
 
 }
 
+
+  onEditData(userId ,index){
+    console.log(this.allUsersData[index]);
+    this['router'].navigate(['signUp'])
+  
     
- 
+
+  }
+
+  onDeleteData(userId){
+    if(confirm('Do You Want to Delete This user?')){
+      console.log(userId);
+      this.http.delete("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/"+userId+".json")
+      .subscribe(() =>{
+        this.onFetchData();})
+      // this.userdataService.deleteUsersData(userId).subscribe(() =>{
+      //   this.onFetchData()
+
+      // })
+    }
+
+  }
 
 
   ngOnInit() {

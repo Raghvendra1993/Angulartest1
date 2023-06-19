@@ -32,8 +32,8 @@
         <td>{{user.state | titlecase}}</td>
         <td>{{user.city | titlecase}}</td>
         <td>
-            <button class="btn-Edit" (click)="onEditData(user.id)"><i class="fas fa-edit"></i></button>
-            <button class="btn-delete"(click)="onDeleteData(user.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            <a routerLink="/update"><i class="fas fa-edit"></i></a>
+            <button class="btn-delete"(click)="onDeleteData(user.userId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
         </td>
     </tr>
 </table>

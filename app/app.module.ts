@@ -20,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 import { UserdataService } from './services/userdata.service';
 import { UsersdataComponent } from './usersdata/usersdata.component';
 import { UserPipe } from './pipes/user.pipe';
+import { UpdateuserComponent } from './updateuser/updateuser.component';
 
 
 
@@ -35,6 +36,7 @@ const appRoute:Routes = [
   {path:'login',component:UloginComponent},
   {path:'signUp',component:UsignupComponent},
   {path:'usersdata',component:UsersdataComponent},
+  {path:'update',component:UpdateuserComponent},
   {path:'**', component:ErrorComponent}
 
 ]
@@ -54,7 +56,8 @@ const appRoute:Routes = [
     ErrorComponent,
     ContactComponent,
     UsersdataComponent,
-    UserPipe
+    UserPipe,
+    UpdateuserComponent
     
   ],
   imports: [
