@@ -56,11 +56,18 @@ export class UsignupComponent implements OnInit {
    
   console.log("Global SignUpForm before",this.signUpForm.value);
   console.log("Signform without ",_signUpForm);
-  
+  if(confirm('Do You Want to Submited?')) {
   this.userdataService.saveRegisteredData(_signUpForm).subscribe((result)=>{
   console.log("result of post api",result);
-  alert("Submitted Successfully");
+  
 });
+this.isSubmit = true;
+this.submitMessage = "Submitted Successfully";
+setTimeout(() => {
+this.isSubmit=false;
+},5000);
+
+  }
 
 if (this.signUpForm.valid) {
   console.log("Form Submitted!");
@@ -68,11 +75,6 @@ if (this.signUpForm.valid) {
 }
 // Show Message Form Submitted Successfully
 
-this.isSubmit = true;
-this.submitMessage = "Submitted Successfully";
-setTimeout(() => {
-this.isSubmit=false;
-},5000);
 
     
 }

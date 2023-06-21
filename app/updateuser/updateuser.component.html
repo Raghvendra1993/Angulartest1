@@ -1,177 +1,229 @@
 <section class="bg-light">
-    <div class="container py-2 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-                <h1 style="text-align: center;">Update User</h1>
-        <form action="" style="text-align: center; display: inline-block;margin-left: 360px;">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="form-outline">
-                        <label class="form-label" for="fname">First Name</label>
-                        <input
-                        type="text"
-                        id="fname"
-                        class="form-control form-control-lg"
-                        placeholder="Enter First Name"
-                        formControlName="firstName" ngModel=""/>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="form-outline">
-                        <label class="form-label" for="lname">Last Name</label>
-                        <input
-                        type="text"
-                        id="lname"
-                        class="form-control form-control-lg"
-                        placeholder="Enter Last Name"
-                        formControlName="lastName" ngModel=""/>
-                    </div>
-                </div>
+  <div class="container py-2 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <h1 style="text-align: center">Update User</h1>
+      <form [formGroup]="updateUserForm" (ngSubmit)="updateUsersData()" action=""style="text-align: center; display: inline-block; margin-left: 360px">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="fname">First Name</label>
+              <input
+                type="text"
+                id="fname"
+                class="form-control form-control-lg"
+                placeholder="Enter First Name"
+                formControlName="firstName"
+                ngModel=""
+              />
             </div>
-
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="form-outline">
-                        <label class="form-label" for="date">Select Date Of Birth</label>
-                        <input
-                        class="form-control form-control-lg"
-                        id="date"
-                        formControlName="dob" ngModel="" 
-                        type="date" min="1980-01-01" max="2012-12-31" style="width: 350px; height: 50px"/>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="form-outline">
-                        <label class="form-label" for="contact">Enter Your Contact</label>
-                        <input
-                        type="text"
-                        class="form-control form-control-lg"
-                        formControlName="mobile" ngModel=""
-                        placeholder="Enter Mobile No."/>
-            
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="lname">Last Name</label>
+              <input
+                type="text"
+                id="lname"
+                class="form-control form-control-lg"
+                placeholder="Enter Last Name"
+                formControlName="lastName"
+                ngModel=""
+              />
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="form-outline">
-                        <label class="form-label">Enter Your Email</label>
-                        <input
-                        type="text"
-                        class="form-control form-control-lg"
-                        formControlName="emailAddress" ngModel=""
-                        placeholder="Enter Email" />
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="form-outline">
-                        <label class="form-label" for="email">Enter Password</label>
-                        <input
-                        type="password"
-                        class="form-control form-control-lg"
-                        formControlName="password" ngModel=""
-                        placeholder="Enter Password"/>
-                    </div>
-                </div>
-            </div>
-            <div class="d-md-flex justify-content-start align-items-center mb-4 py-2" aria-required="true" style="text-align: center;">
-                <h6 class="mb-0 me-4">Gender:</h6>
-                <div class="form-check form-check-inline mb-0 me-4">
-                    <input
-                    class="form-check-input"
-                    type="radio"
-                    id="female"
-                    formControlName="gender" ngModel=""
-                    value="female"/>
-                    <label class="form-check-label" for="female">Female</label>
-                </div>
-                <div class="form-check form-check-inline mb-0 me-4">
-                    <input
-                    class="form-check-input"
-                    type="radio"
-                    id="male"
-                    formControlName="gender" ngModel=""
-                    value="male"/>
-                    <label class="form-check-label" for="male">Male</label>
-                </div>
-                <div class="form-check form-check-inline mb-0">
-                    <input
-                    class="form-check-input"
-                    type="radio"
-                    formControlName="gender" ngModel=""
-                    id="otherGender"
-                    value="other"/>
-                    <label class="form-check-label" for="other">Other</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="form-outline">
-                        <label class="form-label" for="address">Address</label>
-                        <input
-                        type="text"
-                        class="form-control form-control-lg"
-                        formControlName="address" ngModel=""
-                        placeholder="Enter Present Address"/>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="form-outline">
-                        <label class="form-label" for="pincode">Pincode</label>
-                        <input
-                        type="text"
-                        class="form-control form-control-lg"
-                        formControlName="pincode" ngModel=""
-                        placeholder="Enter Pin Code"/>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <label for="">Select State</label>
-                    <select
-                        class="select"
-                        style="width: 350px; height: 50px; border-radius: 10px"
-                        formControlName="state" ngModel="">
-                        <option value="">Select State</option>
-                        <option value="bihar">Bihar</option>
-                        <option value="madhya_pradesh">Madhya Pradesh</option>
-                        <option value="uttar_pradesh">Uttar Pradesh</option>
-                    </select>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <label for="">Select City</label>
-                    <select
-                            class="select"
-                            formControlName="city" ngModel=""
-                            style="width: 350px; height: 50px; border-radius: 10px">
-                            <option value="">Select City</option>
-                            <option value="patna">Patna</option>
-                            <option value="madhubani" >Madhubani</option>
-                            <option value="gaya" >Gaya</option>
-                            <option value="bhagalpur" >Bhagalpur</option>
-                            <option value="indore">Indore</option>
-                            <option value="bhopal" > Bhopal</option>
-                            <option value="gwalior" >Gwalior</option>
-                            <option value="rewa">Rewa</option>
-                            <option value="lucknow">Lucknow</option>
-                            <option value="allahabad">Allahabad</option>
-                            <option value="jhansi">Jhansi</option>
-                            <option value="kanpur">Kanpur</option>
-                    </select>
-                </div>
-            </div>
-            <div class="text-center text-lg-start mt-4 pt-2" style="margin-left: 230px;">
-                <button type="submit" class="btn btn-secondary btn-lg" onclick="" 
-                    style="width: 120px; height: 50px; border-radius: 30px; border: none;
-                    background-color: #96bb7c; margin-right: 30px;">Update
-                </button>
-                <button type="submit" class="btn btn-secondary btn-lg" onclick="" 
-                    style="width: 120px; height: 50px; border-radius: 30px; border: none;
-                    background-color: #96bb7c;">Cancel
-                </button>
-                
-            </div>
-        </form>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="date">Select Date Of Birth</label>
+              <input
+                class="form-control form-control-lg"
+                id="date"
+                formControlName="dob"
+                ngModel=""
+                type="date"
+                min="1980-01-01"
+                max="2012-12-31"
+                style="width: 350px; height: 50px"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="contact">Enter Your Contact</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                formControlName="mobile"
+                ngModel=""
+                placeholder="Enter Mobile No."
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="form-outline">
+              <label class="form-label">Enter Your Email</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                formControlName="emailAddress"
+                ngModel=""
+                placeholder="Enter Email"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="email">Enter Password</label>
+              <input
+                type="password"
+                class="form-control form-control-lg"
+                formControlName="password"
+                ngModel=""
+                placeholder="Enter Password"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-md-flex justify-content-start align-items-center mb-4 py-2"
+          aria-required="true"
+          style="text-align: center"
+        >
+          <h6 class="mb-0 me-4">Gender:</h6>
+          <div class="form-check form-check-inline mb-0 me-4">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="female"
+              formControlName="gender"
+              ngModel=""
+              value="female"
+            />
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+          <div class="form-check form-check-inline mb-0 me-4">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="male"
+              formControlName="gender"
+              ngModel=""
+              value="male"
+            />
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline mb-0">
+            <input
+              class="form-check-input"
+              type="radio"
+              formControlName="gender"
+              ngModel=""
+              id="otherGender"
+              value="other"
+            />
+            <label class="form-check-label" for="other">Other</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="address">Address</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                formControlName="address"
+                ngModel=""
+                placeholder="Enter Present Address"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="pincode">Pincode</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                formControlName="pincode"
+                ngModel=""
+                placeholder="Enter Pin Code"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <label for="">Select State</label>
+            <select
+              class="select"
+              style="width: 350px; height: 50px; border-radius: 10px"
+              formControlName="state"
+              ngModel=""
+            >
+              <option value="">Select State</option>
+              <option value="bihar">Bihar</option>
+              <option value="madhya_pradesh">Madhya Pradesh</option>
+              <option value="uttar_pradesh">Uttar Pradesh</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-4">
+            <label for="">Select City</label>
+            <select class="select" formControlName="city"ngModel=""
+              style="width: 350px; height: 50px; border-radius: 10px"
+            >
+              <option value="">Select City</option>
+              <option value="patna">Patna</option>
+              <option value="madhubani">Madhubani</option>
+              <option value="gaya">Gaya</option>
+              <option value="bhagalpur">Bhagalpur</option>
+              <option value="indore">Indore</option>
+              <option value="bhopal">Bhopal</option>
+              <option value="gwalior">Gwalior</option>
+              <option value="rewa">Rewa</option>
+              <option value="lucknow">Lucknow</option>
+              <option value="allahabad">Allahabad</option>
+              <option value="jhansi">Jhansi</option>
+              <option value="kanpur">Kanpur</option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="text-center text-lg-start mt-4 pt-2"
+          style="margin-left: 230px"
+        >
+          <button
+            type="submit"
+            class="btn btn-secondary btn-lg"
+            onclick=""
+            style="
+              width: 120px;
+              height: 50px;
+              border-radius: 30px;
+              border: none;
+              background-color: #96bb7c;
+              margin-right: 30px;
+            "
+          >
+            Update
+          </button>
+          <button
+            type="submit"
+            class="btn btn-secondary btn-lg"
+            onclick=""
+            style="
+              width: 120px;
+              height: 50px;
+              border-radius: 30px;
+              border: none;
+              background-color: #96bb7c;
+            "
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
     </div>
-</section>>
+  </div>
+</section>

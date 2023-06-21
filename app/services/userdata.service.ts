@@ -24,13 +24,17 @@ fetchUsersData(){
 
 
 deleteUsersData(userId){
-  this.http.delete("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/"+userId+".json");
+ return this.http.delete("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/"+userId+".json");
 }
 
-updateUsersData(userId){
-  this.http.delete("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/"+userId+".json"); 
+getUsersDataById(userId:any){
+ return this.http.get("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/"+userId+".json");
+}
+
+updateUsersData(userId,body){
+ return this.http.put("https://angulardemoproject-2de3d-default-rtdb.firebaseio.com/registeredUser/user/"+userId+".json" ,body);
 
 }
 
+}
   
-}

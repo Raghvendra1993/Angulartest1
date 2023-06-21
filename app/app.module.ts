@@ -36,7 +36,8 @@ const appRoute:Routes = [
   {path:'login',component:UloginComponent},
   {path:'signUp',component:UsignupComponent},
   {path:'usersdata',component:UsersdataComponent},
-  {path:'update',component:UpdateuserComponent},
+  // {path:'update',component:UpdateuserComponent},
+  {path:'update/:userId',component:UpdateuserComponent},
   {path:'**', component:ErrorComponent}
 
 ]
