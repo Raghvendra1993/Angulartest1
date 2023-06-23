@@ -25,14 +25,14 @@ export class UsignupComponent implements OnInit {
 
     this.signUpForm = new FormGroup({
     
-      firstName : new FormControl(null ,[Validators.required,Validators.minLength(3),this.noSpaceAllowed]),
-      lastName : new FormControl(null ,[Validators.required ,this.noSpaceAllowed]),
+      firstName : new FormControl(null ,[Validators.required,Validators.minLength(3),Validators.pattern('^[a-zA-Z \-\']+'),this.noSpaceAllowed]),
+      lastName : new FormControl(null ,[Validators.required,,Validators.pattern('^[a-zA-Z \-\']+') ,this.noSpaceAllowed]),
       dob: new FormControl(null , Validators.required),
       mobile: new FormControl(null ,[Validators.required , this.noSpaceAllowed ,Validators.minLength(10) ,Validators.maxLength(10)]),
       emailAddress: new FormControl(null ,[Validators.required, this.noSpaceAllowed, Validators.email]),
       password: new FormControl(null ,[Validators.required ,this.noSpaceAllowed, Validators.minLength(8)]),
       gender : new FormControl(null , [Validators.required] ),
-      address: new FormControl(null ,Validators.required),
+      address: new FormControl(null ,[Validators.required , Validators.minLength(10)]),
       pincode: new FormControl(null,[Validators.required ,this.noSpaceAllowed, Validators.minLength(6) ,Validators.maxLength(6)]),
       state: new FormControl(null , Validators.required),
       city: new FormControl(null , Validators.required)
@@ -79,6 +79,18 @@ if (this.signUpForm.valid) {
     
 }
 
+OnlyNumbersAllowed(event):boolean{
+  
+  const charCode = (event.which)?event.which:event.keyCode;
+  if(charCode>31 && (charCode < 48 || charCode > 57 ))
+  {
+    console.log('charCode restricted is'+ charCode);
+    
+    return false;
+  }
+  return true;
+
+}
 
  
 }

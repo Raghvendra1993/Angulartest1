@@ -205,23 +205,9 @@
               background-color: #96bb7c;
               margin-right: 30px;
             "
-          >
-            Update
-          </button>
-          <button
-            type="submit"
-            class="btn btn-secondary btn-lg"
-            onclick=""
-            style="
-              width: 120px;
-              height: 50px;
-              border-radius: 30px;
-              border: none;
-              background-color: #96bb7c;
-            "
-          >
-            Cancel
-          </button>
+          >Update</button>
+         <p *ngIf="isUpdate" class="submitMessage" style="color: green; font-weight: bold;">{{updateMessage}}</p>
+        
         </div>
       </form>
     </div>

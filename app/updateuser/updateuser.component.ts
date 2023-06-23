@@ -15,6 +15,8 @@ export class UpdateuserComponent implements OnInit{
   isFetching:boolean = true;
   allUsersData:any;
   userId:string;
+  isUpdate: boolean=true;
+  updateMessage = '';
   updateUserForm = new FormGroup({
     firstName : new FormControl(),
       lastName : new FormControl(),
@@ -38,7 +40,7 @@ ngOnInit():void {
 let userId = this.router.snapshot.params['userId'];
   // console.log("Url_Id",userId);
   
-  
+  alert('Do You Want to Edit?')
     this.userdataService.getUsersDataById(userId).subscribe((userdata:any) => {
       console.log(userdata); 
         this.updateUserForm = new FormGroup({
@@ -58,13 +60,26 @@ let userId = this.router.snapshot.params['userId'];
     })
  
   
+
   }
   updateUsersData(){
     let userId = this.router.snapshot.params['userId'];
+    if(confirm('Do You Change Previous?')){
     this.userdataService.updateUsersData(userId,this.updateUserForm.value).subscribe((userdata) =>{
     console.log(userdata);
   
-  })
-  }
+  });
+this.isUpdate = true;
+this.updateMessage = "Updated Successfully";
+setTimeout(() => {
+this.isUpdate=false;
+},5000);
 
+}
+
+if (this.updateUserForm.valid) {
+  console.log("Form Submitted!");
+  this.updateUserForm.reset();
+}
+}
 }

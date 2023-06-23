@@ -28,7 +28,7 @@
                                 placeholder="Enter First Name"
                                 formControlName="firstName" ngModel=""/>
                                 <div class="text-danger">
-                                    <span style="color: red;" *ngIf="!signUpForm.get('firstName').valid && signUpForm.get('firstName').touched">Please Enter First Name
+                                    <span style="color: red;" *ngIf="!signUpForm.get('firstName').valid && signUpForm.get('firstName').touched">Please Enter Only Characters
                                     </span>
                                     <!-- <span style="color: red;"*ngIf="signUpForm.get('signUpForm.firstName').errors?.['noSpaceAllowed'] && signUpForm.get('firstName').touched">
                                         Space Not Allowed 
@@ -47,7 +47,7 @@
                                 formControlName="lastName" ngModel=""/>
                                 <div>
                                     <span style="color: red;" *ngIf="!signUpForm.get
-                                        ('lastName').valid && signUpForm.get('lastName').touched">Please Enter Last Name
+                                        ('lastName').valid && signUpForm.get('lastName').touched">Please Enter Only Characters
                                     </span>
                                     <!-- <span style="color: red;"*ngIf="signUpForm.get('signUpForm.lastName').errors?.['noSpaceAllowed']">
                                         Space Not Allowed 
@@ -78,7 +78,7 @@
                                 <label class="form-label" for="contact">Enter Your Contact
                                 </label>
                                 <input
-                                type="text"
+                                type="text" (keypress)="OnlyNumbersAllowed($event)"
                                 class="form-control form-control-lg"
                                 formControlName="mobile" ngModel=""
                                 placeholder="Enter Mobile No."/>
@@ -167,7 +167,7 @@
                             placeholder="Enter Present Address"/>
                             <div>
                                 <span style="color: red;" *ngIf="!signUpForm.get
-                                ('address').valid && signUpForm.get('address').touched">Please Enter Address</span>
+                                ('address').valid && signUpForm.get('address').touched">Please Enter Permanent Address</span>
                             </div>
                         </div>
                     </div>
@@ -175,7 +175,7 @@
                         <div class="form-outline">
                             <label class="form-label" for="pincode">Pincode</label>
                             <input
-                            type="text"
+                            type="text" (keypress)="OnlyNumbersAllowed($event)"
                             class="form-control form-control-lg"
                             formControlName="pincode" ngModel=""
                             placeholder="Enter Pin Code"/>
