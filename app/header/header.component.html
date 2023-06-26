@@ -36,11 +36,10 @@
                     aria-expanded="false" ngbDropdownToggle>Today News
                 </button>
                 <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-dark" routerLinkActive="active">
-                    <li><a class="dropdown-item" routerLink="#">All News</a></li>
-                    <li><a class="dropdown-item" routerLink="#">Top Headline</a></li>
+                    <li><a class="dropdown-item" routerLink="allnews">Top Headline</a></li>
                     <li><a class="dropdown-item" routerLink="#">Business</a></li>
                     <li><a class="dropdown-item" routerLink="#">Sports</a></li>
-                    <li><a class="dropdown-item" routerLink="#">Technology</a></li>
+                    <li><a class="dropdown-item" routerLink="technews">Technology</a></li>
                 </ul>
             </div>
 
@@ -49,12 +48,12 @@
                     class="btn btn-dark dropdown-toggle"
                     type="button"
                     data-bs-toggle="dropdown"
-                    aria-expanded="false" ngbDropdownToggle>User
+                    aria-expanded="true" ngbDropdownToggle>User
                 </button>
                 <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-dark" routerLinkActive="active">
                     <li><a class="dropdown-item" routerLink="login">Login</a></li>
                     <li><a class="dropdown-item" routerLink="signUp">Sign Up</a></li>
-                    <li><a class="dropdown-item" routerLink="usersdata">User Data</a></li>
+                    <!-- <li><a class="dropdown-item" routerLink="usersdata">User Data</a></li> -->
                 </ul>
             </div>
             <form class="d-flex input-group w-auto">

@@ -18,9 +18,13 @@ import { MyservicesComponent } from './myservices/myservices.component';
 import { ErrorComponent } from './error/error.component';
 import { ContactComponent } from './contact/contact.component';
 import { UserdataService } from './services/userdata.service';
+import { NewsserviceService } from './services/newsservice.service';
 import { UsersdataComponent } from './usersdata/usersdata.component';
 import { UserPipe } from './pipes/user.pipe';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
+import { AllnewsComponent } from './allnews/allnews.component';
+import { TechnologynewsComponent } from './technologynews/technologynews.component';
+import { BusinessnewsComponent } from './businessnews/businessnews.component';
 
 
 
@@ -38,6 +42,8 @@ const appRoute:Routes = [
   {path:'usersdata',component:UsersdataComponent},
   // {path:'update',component:UpdateuserComponent},
   {path:'update/:userId',component:UpdateuserComponent},
+  {path:'allnews',component:AllnewsComponent},
+  {path:'technews',component:TechnologynewsComponent},
   {path:'**', component:ErrorComponent}
 
 ]
@@ -58,18 +64,23 @@ const appRoute:Routes = [
     ContactComponent,
     UsersdataComponent,
     UserPipe,
-    UpdateuserComponent
+    UpdateuserComponent,
+    AllnewsComponent,
+    TechnologynewsComponent,
+    BusinessnewsComponent
     
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     NgbModule,
-    RouterModule.forRoot(appRoute),
+    RouterModule.forRoot(appRoute, {
+    initialNavigation: 'enabledBlocking'
+}),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UserdataService],
+  providers: [UserdataService ,NewsserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { UserdataService } from '../services/userdata.service';
 import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +10,8 @@ import { UpdateuserComponent } from '../updateuser/updateuser.component';
 @Component({
   selector: 'app-usersdata',
   templateUrl: './usersdata.component.html',
-  styleUrls: ['./usersdata.component.css']
+  styleUrls: ['./usersdata.component.css'],
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UsersdataComponent implements OnInit{
   [x: string]: any;
@@ -45,6 +46,10 @@ onFetchData(){
         this.onFetchData();})
       }
 
+  }
+
+  onSignOut(){
+    
   }
 
 

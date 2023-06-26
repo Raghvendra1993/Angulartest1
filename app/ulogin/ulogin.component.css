@@ -16,3 +16,8 @@ background: #eee;
 btn1:hover{
     background-color:#96bb7c;   
 }
+.form-control{
+    height: 50px;
+    width: 300px;
+
+}

@@ -78,9 +78,8 @@ if (this.signUpForm.valid) {
 
     
 }
-
+//  Validation On Number
 OnlyNumbersAllowed(event):boolean{
-  
   const charCode = (event.which)?event.which:event.keyCode;
   if(charCode>31 && (charCode < 48 || charCode > 57 ))
   {
@@ -92,5 +91,4 @@ OnlyNumbersAllowed(event):boolean{
 
 }
 
- 
 }
